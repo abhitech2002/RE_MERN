@@ -79,6 +79,7 @@ header nav div a:active{
     /* border: 1px solid rgb(255, 0, 221); */
     width: auto;
     height: 80%;
+    text-align: justify;
     background-color: rgb(113, 185, 185);
 
 }
