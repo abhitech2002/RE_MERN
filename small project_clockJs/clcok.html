@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>
+            JS Clock!!!
+        </title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                background-image: url(https://images.unsplash.com/photo-1568025764309-ff9b3daf1985?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDUzfF84ekZIdWhSaHlvfHxlbnwwfHx8fA%3D%3D);
+                background-size: cover;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            h1 {
+                color: red;
+                text-align: center;
+                margin: 1rem auto;
+                /* font-size: larger; */
+                font-weight: bolder;
+            }
+            hr {
+                width: 80%;
+                margin: 1rem auto;
+            }
+            .clock {
+                border: 20px solid grey;
+                border-radius: 50%;
+                margin: 14rem 42rem;
+                height: 30rem;
+                width: 30rem;
+                padding: 2rem;
+            }
+
+            .clock-face {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+ 
+            .hand {
+                width: 50%;
+                height: 10px;
+                background-color: grey;
+                position: absolute;
+                top: 50%;
+                transform: rotate(90deg);
+                transform-origin: 100%;
+                /* transition: all 0.4s; */
+            }
+            .second {
+                height: 6px;
+                /* transform: rotate(120deg); */
+            }
+            .min {
+                height: 6px;
+                /* transform: rotate(180deg); */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Clcok Using JS and CSS</h1>
+        <hr>
+        <div class="clock">
+            <div class="clock-face">
+                <div class="hand second"></div>
+                <div class="hand min"></div>
+                <div class="hand hour"></div>
+            </div>
+        </div>
+
+        <script>
+            const secondHand = document.querySelector(".second")
+            const minHand = document.querySelector(".min")
+            const hourHand = document.querySelector(".hour")
+            function setClock(){
+                const now = new Date()
+                const seconds = now.getSeconds()
+                const secondDegree = ((seconds/60) * 360) + 90
+                secondHand.style.transform = `rotate(${secondDegree}deg)` // "rotate("+secondsDegree+"deg)"
+
+                const minute = now.getMinutes()
+                const minuteDegree = ((minute/60) * 360) + 90
+                minHand.style.transform = `rotate(${minuteDegree}deg)` // "rotate("+secondsDegree+"deg)"
+
+                const hour = now.getHours()
+                const hourDegree = ((hour/12) * 360) + 90
+                hourHand.style.transform = `rotate(${hourDegree}deg)` // "rotate("+secondsDegree+"deg)"
+            }
+            setInterval(function(){
+                setClock()
+            },1000)
+            setClock()
+        </script>
+    </body>
+</html>
