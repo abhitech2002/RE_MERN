@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS String</title>
+</head>
+<body>
+    <h1>String in JS</h1>
+    <script>
+        // String Conctenation
+        let str1 = "is simply dummy text of the printing and typesetting industry. " 
+            + "Lorem Ipsum has been the industry's standard dummy " 
+            + "text ever since the 1500s,"
+        str1 += "You can use the same code many times with different arguments, to produce different results."
+
+        // Use of literals
+        let str2 = `is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries,knh`
+
+        console.log("str1:",str1, "str2: ", str2)
+
+    </script>
+    <script>
+        // special characters
+        str1 = "this is \"highlighted\" word."
+        str1 = 'this is "highlighted" word.'
+        str2 = "this is 'highlighted' word."
+
+        // string on new line
+        str1 =  "hello, \nthis is string session."
+
+        console.log("str1:",str1, "str2:",str2)
+
+        // string with tab
+        str1 = 'hello, \tthis is string with tab.'
+
+        console.log("str1: ", str1)
+    </script>
+
+    <script>
+        // string type and conversion
+        let someValue = 123
+
+        console.log("type of variable", typeof someValue)
+
+        someValue = String(someValue)
+
+        console.log("type of varaible changing", typeof someValue)
+
+        // use template literal
+        someValue = `${someValue}`
+
+        console.log(" type some value : ", typeof someValue)
+
+        // use template literal
+        someValue = `${someValue}`
+
+        console.log(" type some value : ", typeof someValue)
+
+        // undefined
+        let someValue2 = String(undefined)
+        someValue2 = undefined + "some_value"
+        console.log(" type of undefined : ", typeof someValue2, someValue2)
+
+        // null
+        let someValue3 = String(null)
+        console.log(" type of null : ", typeof someValue3)
+
+        // boolean
+        let someValue4 = String(true)
+        console.log(" type of boolean : ", typeof someValue4)
+
+    </script>
+
+    <script>
+        //sepration of string
+        str1 = "hello World"
+
+        console.log("char st index:", str1.charAt(2)) 
+        console.log("char at index:", str1[2])
+
+        // get aub atring from a string
+        str2 = str1.slice(1,5)
+        console.log("sliced string", str2)
+
+        str1 = "this is Re Academy"
+        
+        str2 = str1.split(" ")
+        str3 = str1.split("i") // to remove the words from the string
+
+        console.log("split string:", str2)
+        console.log("split string:", str3)
+
+        str1 = str2.join("i")
+        console.log("joined string", str1)
+
+    </script>
+</body>
+</html>

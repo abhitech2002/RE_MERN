@@ -1,0 +1,1 @@
+Requests - Event Loop - Register Callback - Intense Operation - Operation Complete - Event loop - Trigger Callback - REQUEST
